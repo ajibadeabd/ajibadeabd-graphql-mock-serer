@@ -1,0 +1,48 @@
+scalar userGenderEnum
+scalar userLanguageEnum
+scalar PhoneNumber
+scalar EmailAddress 
+scalar JSON
+scalar Date
+
+type User {
+  emails: [userEmails!]!
+  disabled: Boolean!
+  firstName: String
+  lastName: String!
+  phones: [userPhone]!
+  city: String
+  country: String
+  gender: userGenderEnum
+  language: userLanguageEnum!
+  experience: String
+  birthDate: Date
+  educationLevel: String
+  crmId: String
+  age: Int
+  sub: ID!
+  metaData: JSON
+}
+
+type userEmails {
+  value: EmailAddress!
+  verified: Boolean!
+}
+
+type userPhone {
+  value: PhoneNumber!
+  verified: Boolean!
+}
+
+input userMetaDataInput {
+  key: String!
+  value: String
+}
+
+type Query {
+  me: User
+}
+
+type Mutation {
+  setUserMetadata(input: [userMetaDataInput!]!): User!
+}

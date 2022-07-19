@@ -1,0 +1,31 @@
+{
+    "userCollection":[
+        {
+        "firstName":"abdullah",
+        "age": 222,
+        "phones":[
+            {
+                "value":"+23490909090"
+            }
+        ]
+        },
+        {
+        "firstName":"hazeem",
+        "age": 23,
+        "phones":[
+            {
+                "value":"+23483849090"
+            }
+        ]
+        },
+        {
+        "firstName":"dhaval",
+        "age": 90,
+        "phones":[
+            {
+                "value":"+2342439090"
+            }
+        ]
+        }
+    ]
+}
