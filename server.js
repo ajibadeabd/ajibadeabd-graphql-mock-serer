@@ -6,11 +6,9 @@ const path = require("path")
 const { makeExecutableSchema  } = require("@graphql-tools/schema")
 const  mockedResolver = require("./src/resolver/index");
 const   { loadFilesSync }  = require("@graphql-tools/load-files");
-const { config } = require("dotenv")
-/*
-config env variable
-*/ 
-config()
+require("dotenv").config()
+
+
 const { 
     resolvers: scalerResolver,
    } = require("graphql-scalars");
