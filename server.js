@@ -6,11 +6,16 @@ const path = require("path")
 const { makeExecutableSchema  } = require("@graphql-tools/schema")
 const  mockedResolver = require("./src/resolver/index");
 const   { loadFilesSync }  = require("@graphql-tools/load-files");
-  const { 
+const { config } = require("dotenv")
+/*
+config env variable
+*/ 
+config()
+const { 
     resolvers: scalerResolver,
    } = require("graphql-scalars");
 
-let  typeDefs = loadFilesSync(
+const  typeDefs = loadFilesSync(
   path.join(process.cwd(), './src/schema/me.graphql'),
   {
     extensions: ['graphql'],
@@ -47,6 +52,7 @@ const server = new ApolloServer({
 })
 
 
-server.listen().then(({ url }) => {
+const port = process.env.PORT || 3000
+server.listen(port).then(({ url }) => {
   console.log(`🚀 Server ready at ${url}`)
 })
